@@ -1,0 +1,10 @@
+# Folders
+CMakeFiles
+bin
+
+# Files
+CMakeChace.txt
+Makefile
+cmake_install.cmake
+*.a
+*.so

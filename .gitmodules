@@ -1,0 +1,9 @@
+[submodule "jsoncpp"]
+	path = gitSubmodules/jsoncpp
+	url = https://github.com/open-source-parsers/jsoncpp
+[submodule "dynamic-thread-pool"]
+	path = gitSubmodules/dynamic-thread-pool
+	url = https://github.com/dima91/dynamic-thread-pool
+[submodule "ipc"]
+	path = gitSubmodules/ipc
+	url = https://github.com/dima91/ipc
