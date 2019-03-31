@@ -1,9 +1,10 @@
 # CMakeLists to build the 'libmicroservicespp' library
 
-set (CMAKE_CXX_FLAGS	"${CMAKE_CXX_FLAGS} -Wall -Wextra -Wno-unused-parameter -pedantic -O3 -g3 -std=c++11 -fPIC -ldl")
+
 set (LIBRARY_NAME		microservicespp)
 set (SUBMODULES_DIR		../gitSubmodules)
 set (HEADERS_DIR		include   ${SUBMODULES_DIR}/jsoncpp/include)
+set (CMAKE_RUNTIME_OUTPUT_DIRECTORY	bin)
 
 
 include_directories	(${HEADERS_DIR})
@@ -16,3 +17,9 @@ set_target_properties (${LIBRARY_NAME}_static PROPERTIES OUTPUT_NAME ${LIBRARY_N
 
 add_library(${LIBRARY_NAME}_shared SHARED $<TARGET_OBJECTS:core_objs>)
 set_target_properties (${LIBRARY_NAME}_shared PROPERTIES OUTPUT_NAME ${LIBRARY_NAME})
+
+
+
+
+add_executable (DynamicLoaderTest tests/dynamicLoaderTest.cpp)
+target_link_libraries (DynamicLoaderTest ${LIBRARY_NAME}_shared)
