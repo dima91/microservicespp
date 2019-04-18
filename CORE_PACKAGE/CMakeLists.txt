@@ -20,6 +20,4 @@ set_target_properties (${LIBRARY_NAME}_shared PROPERTIES OUTPUT_NAME ${LIBRARY_N
 
 
 
-
-add_executable (DynamicLoaderTest tests/dynamicLoaderTest.cpp)
-target_link_libraries (DynamicLoaderTest ${LIBRARY_NAME}_shared)
+add_subdirectory (tests/dynamicLoader)
