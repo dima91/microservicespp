@@ -10,7 +10,7 @@
 
 #define FACTORY_SYMBOL_NAME "createObject"
 
-#include <exceptions.hpp>
+#include <core/exceptions.hpp>
 
 #include <memory>
 #include <string>
@@ -39,7 +39,7 @@ namespace microservicespp {
 				void openModule (std::string module) {
 					if(!(dllHandle= dlopen (module.c_str(), RTLD_NOW))) {
 						//std::cerr << "Failed to open library: " << dlerror() << std::endl;
-						throw OpenModuleException (dlerror());
+						throw exceptions::OpenModuleException (dlerror());
 					}
 
 					// Reset errors
@@ -48,7 +48,7 @@ namespace microservicespp {
 					if(!(factory = (typename V::create_t*) dlsym (dllHandle, FACTORY_SYMBOL_NAME))) {
 						//std::cerr << "Failed to load 'create' symbol: " << dlerror() << std::endl;
 						closeModule();
-						throw LoadSymbolExcepion (dlerror());
+						throw exceptions::LoadSymbolExcepion (dlerror());
 					}
 				}
 

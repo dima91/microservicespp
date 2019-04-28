@@ -147,7 +147,7 @@ namespace microservicespp {
 		void stopRegistry ();
 
 		/**
-		 * \brief Return wether registry is started or not
+		 * \brief Return whether registry is started or not
 		 */
 		bool isStarted ();
 
